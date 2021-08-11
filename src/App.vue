@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import MemuBar from "./components/Menubar.vue";
+import MemuBar from "./components/MenuBar.vue";
 
 @Component({
   components: {

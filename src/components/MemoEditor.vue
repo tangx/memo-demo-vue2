@@ -44,16 +44,29 @@ export default class MemoEditor extends Vue {
 
   saveMemo() {
     // console.log(this.memo);
-    this.$store.state.aHelper.add(this.memo);
+    if (
+      this.memo.content.length > 0 &&
+      this.memo.title.length > 0 &&
+      this.memo.cataId < 3 &&
+      this.memo.cataId > -1
+    ) {
+      this.$store.state.aHelper.add(this.memo);
+    }
     this.closeEditor();
   }
   closeEditor() {
     this.$store.state.isMemoEditorVisibility = false;
-    this.$store.state.transMemo = this.initMemo();
+    this.$store.state.transMemo = null;
   }
 
   created(): void {
-    this.memo = this.$store.state.transMemo;
+    const _memo = this.$store.state.transMemo;
+    // console.log("_memo::::", _memo);
+    if (_memo == null) {
+      this.memo = this.initMemo();
+      return;
+    }
+    this.memo = _memo;
   }
 
   initMemo(): ItemData {

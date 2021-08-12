@@ -36,7 +36,13 @@ class CommonDataHelper {
     }
 
     // 3. 新增一条数据， 返回数据对应的编号
-    addData(content: any): void {
+    addData(obj: any): void {
+
+        // 先删除，在再保存。
+        const newId: number = obj[this.primaryKey]
+        console.log("newID:::::", newId)
+        this.removeData(newId)
+
         // 获取 data
         const arr: any[] = this.readData()
 
@@ -44,7 +50,10 @@ class CommonDataHelper {
         // const newPost: Post = new Post(newId, content)
         // 使用时间作 ID
         // const newId = Date.now().toString()
-        const newId: number = content[this.primaryKey]
+        // const newId: number = obj[this.primaryKey]
+        // console.log("newID:::::", newId)
+
+        // console.log
         // const conStr: string = JSON.stringify(content)
 
         // const post: any = {
@@ -53,7 +62,7 @@ class CommonDataHelper {
         // }
 
         // 数组扩容
-        arr.push(content)
+        arr.push(obj)
 
         // 保存
         this.saveData(arr)

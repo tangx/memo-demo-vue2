@@ -1,6 +1,11 @@
 <template>
   <div id="memos" class="container">
-    <div class="memo" v-for="item in memoArr" :key="item.id" :id="item.id">
+    <div
+      class="memo"
+      v-for="item in reverseMemoArry()"
+      :key="item.id"
+      :id="item.id"
+    >
       <div class="title">{{ item.title }}</div>
       <div class="time">{{ item.createTime }} <button>编辑</button></div>
 
@@ -22,6 +27,12 @@ import Vue from "vue";
 export default class ItemList extends Vue {
   // 使用 this 代指当前 Vue 域
   memoArr: ItemData[] = this.$store.state.aHelper.memoList;
+
+  // 倒序显示
+  // https://blog.csdn.net/Vicki_/article/details/80094602
+  reverseMemoArry(): ItemData[] {
+    return this.memoArr.reverse();
+  }
 }
 </script>
 

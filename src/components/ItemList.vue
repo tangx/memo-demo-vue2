@@ -10,7 +10,6 @@
 // 在 main.ts 中， Vue 中已经包含了 store， 所以不需要再导入
 // import store from "../store";
 
-import ItemData from "@/model/ItemData";
 import MemoItem from "./MemoItem.vue";
 import { Component, Vue } from "vue-property-decorator";
 

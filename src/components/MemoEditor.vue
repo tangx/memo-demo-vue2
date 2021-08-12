@@ -35,11 +35,12 @@
 import ItemData from "@/model/ItemData";
 import { Component, Vue } from "vue-property-decorator";
 
-@Component
+@Component({})
 export default class MemoEditor extends Vue {
   // 用来保存编辑内容
   // 初始化一个空
-  memo: ItemData = new ItemData(-1, 0, "", "");
+  //   memo: ItemData = new ItemData(-1, 0, "", "");
+  memo!: ItemData;
 
   saveMemo() {
     // console.log(this.memo);
@@ -48,6 +49,15 @@ export default class MemoEditor extends Vue {
   }
   closeEditor() {
     this.$store.state.isMemoEditorVisibility = false;
+    this.$store.state.transMemo = this.initMemo();
+  }
+
+  created(): void {
+    this.memo = this.$store.state.transMemo;
+  }
+
+  initMemo(): ItemData {
+    return new ItemData(-1, 0, "", "");
   }
 }
 </script>

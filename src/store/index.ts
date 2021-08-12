@@ -15,8 +15,16 @@ const store = new Vuex.Store({
         // 是否显示编辑框
         isMemoEditorVisibility: false,
 
+        // 传递 memo 对象
+        transMemo: null,
     },
     mutations: {
+        openMemoEditor(state: any, memo: any) {
+
+            state.transMemo = memo
+            state.isMemoEditorVisibility = true;
+
+        }
     },
 
     // actions: {

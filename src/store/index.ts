@@ -13,7 +13,7 @@ const store = new Vuex.Store({
         aHelper: new ActionHelper(),
 
         // 是否显示编辑框
-        isMemoEditorVisibility: true,
+        isMemoEditorVisibility: false,
 
     },
     mutations: {

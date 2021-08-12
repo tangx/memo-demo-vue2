@@ -10,13 +10,17 @@ class ItemData {
 
     // 这里因为有默认值， 因此可以进行类型推断。  eslint 返回会报错。
     // Type number trivially inferred from a number literal, remove type annotation  @typescript-eslint/no-inferrable-types
-    constructor(id: number = -1, cataId: Catigory = 0, title: string = '', content: string = '') {
+    constructor(id: number, cataId: Catigory = 0, title: string = '', content: string = '') {
+        if (id < 1) {
+            id = Date.now()
+        }
         this.id = id
         this.cataId = cataId
         this.title = title
         this.content = content
         this.createTime = this.timeFormat(Date.now())
     }
+
 
     // 将时间戳转换为 2006-01-02T15:04Z 格式
     protected timeFormat(timestamp: number): string {
@@ -29,7 +33,7 @@ class ItemData {
 
         // 2. 使用 日期对象使用 getXXX 方法
         const datetime: string = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`
-        const hourminute: string = `${date.getHours()}: ${date.getMinutes()}`
+        const hourminute: string = `${date.getHours()}: ${date.getUTCMinutes()}`
 
         return `${datetime}T${hourminute}Z`
 

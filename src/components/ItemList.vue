@@ -1,7 +1,7 @@
 <template>
   <div id="memos" class="container">
     <div>
-      <MemoItem v-for="item in reverseMemoArr" :key="item.id" :item="item" />
+      <MemoItem v-for="item in reverseMemoArr" :key="item.id" :memo="item" />
     </div>
   </div>
 </template>

@@ -1,10 +1,10 @@
 <template>
-  <div class="memo" :key="item.id" :memo-id="item.id">
-    <div class="title">{{ item.title }}</div>
-    <div class="time">{{ item.createTime }} <button>编辑</button></div>
+  <div class="memo" :key="memo.id" :memo-id="memo.id">
+    <div class="title">{{ memo.title }}</div>
+    <div class="time">{{ memo.createTime }} <button>编辑</button></div>
 
     <div class="content">
-      {{ item.content }}
+      {{ memo.content }}
     </div>
   </div>
 </template>
@@ -15,6 +15,6 @@ import { Component, Vue, Prop } from "vue-property-decorator";
 
 @Component
 export default class MemoItem extends Vue {
-  @Prop() item!: ItemData;
+  @Prop() memo!: ItemData;
 }
 </script>

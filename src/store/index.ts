@@ -10,7 +10,10 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
     state: {
         title: '我是用户友好的 备忘录 工具',
-        aHelper: new ActionHelper()
+        aHelper: new ActionHelper(),
+
+        // 是否显示编辑框
+        isMemoEditorVisibility: false,
 
     },
     mutations: {

@@ -1,12 +1,13 @@
 <template>
   <div id="memos" class="container">
-    <p v-for="item in memoArr" :key="item.id">
-      <span>
-        {{ item.title }}
+    <div class="memo" v-for="item in memoArr" :key="item.id" :id="item.id">
+      <div class="title">{{ item.title }}</div>
+      <div class="time">{{ item.createTime }} <button>编辑</button></div>
+
+      <div class="content">
         {{ item.content }}
-        {{ item.createTime }}
-      </span>
-    </p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -23,3 +24,17 @@ export default class ItemList extends Vue {
   memoArr: ItemData[] = this.$store.state.aHelper.memoList;
 }
 </script>
+
+<style>
+.memo {
+  margin: 2%;
+  border: 1px solid black;
+}
+.title {
+  font-size: 30px;
+}
+.content {
+  margin: 3%;
+  /* border: 1px solid black; */
+}
+</style>

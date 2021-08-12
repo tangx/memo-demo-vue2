@@ -1,9 +1,11 @@
 <template>
   <div id="app">
-    {{ $store.state.title }}
-    {{ $store.state.loveCount }}
-    <MemuBar />
-    <ItemList />
+    <h1>{{ $store.state.title }}</h1>
+
+    <div>
+      <MemuBar />
+      <ItemList />
+    </div>
   </div>
 </template>
 

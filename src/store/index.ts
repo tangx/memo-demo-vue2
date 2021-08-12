@@ -9,7 +9,7 @@ Vue.use(Vuex)
 // 3. 创建 vuex 的仓库对象
 const store = new Vuex.Store({
     state: {
-        title: '我是用户友好的 备忘录 工具',
+        title: '用户界面最友好的备忘录工具',
         aHelper: new ActionHelper(),
 
         // 是否显示编辑框

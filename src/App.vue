@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+    {{ $store.state.title }}
+    {{ $store.state.loveCount }}
     <MemuBar />
   </div>
 </template>

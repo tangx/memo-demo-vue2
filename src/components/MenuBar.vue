@@ -4,7 +4,10 @@
       <span align="left">菜单栏</span>
       <button @click="openEditor">新建</button>
       <span>全部</span>
-      <span>{{ totalCount }} </span>
+      <span>
+        <!-- {{ totalCount }} -->
+        {{ $store.getters.totalCount }}
+      </span>
       <div>
         <button @click="initialTestData">创建测试数据</button>
       </div>
@@ -16,13 +19,7 @@
 import ItemData from "@/model/ItemData";
 import { Component, Vue } from "vue-property-decorator";
 
-@Component({
-  computed: {
-    totalCount() {
-      return this.$store.state.aHelper.memoList.length;
-    },
-  },
-})
+@Component
 export default class MenuBar extends Vue {
   openEditor(): void {
     this.$store.state.isMemoEditorVisibility = true;

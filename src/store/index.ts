@@ -18,6 +18,11 @@ const store = new Vuex.Store({
         // 传递 memo 对象
         transMemo: null,
     },
+    getters: {
+        totalCount: state => {
+            return state.aHelper.memoList.length
+        }
+    },
     mutations: {
         openMemoEditor(state: any, memo: any) {
 

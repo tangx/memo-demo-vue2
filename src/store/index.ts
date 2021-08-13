@@ -32,8 +32,8 @@ const store = new Vuex.Store({
             // 指针对象， 所以反转 违反了 strict
             // https://qastack.cn/programming/30610523/reverse-array-in-javascript-without-mutating-original-array
             // 使用 slice() 创建一个切片拷贝
-            // return state.aHelper.memoList.slice().reverse()
-            return state.aHelper.memoList.reverse()
+            // return state.aHelper.memoList.reverse()
+            return state.aHelper.memoList.slice().reverse()
 
         },
 

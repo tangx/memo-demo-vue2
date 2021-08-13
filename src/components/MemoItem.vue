@@ -29,7 +29,8 @@ export default class MemoItem extends Vue {
 
   delMemo(): void {
     const id = this.memo.id;
-    this.$store.state.aHelper.remove(id);
+    // this.$store.state.aHelper.remove(id);
+    this.$store.commit("aHelperRemove", id);
   }
 
   editMemo(): void {

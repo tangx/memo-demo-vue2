@@ -50,12 +50,14 @@ export default class MemoEditor extends Vue {
       this.memo.cataId < 3 &&
       this.memo.cataId > -1
     ) {
-      this.$store.state.aHelper.add(this.memo);
+      //   this.$store.state.aHelper.add(this.memo);
+      this.$store.commit("aHelperAdd", this.memo);
     }
     this.closeEditor();
   }
   closeEditor() {
-    this.$store.state.isMemoEditorVisibility = false;
+    // this.$store.state.isMemoEditorVisibility = false;
+    this.$store.commit("setMemoEditorVisibility", false);
 
     // https://vuex.vuejs.org/zh/guide/forms.html
     // 使用 mutation 事件修改数据， 而非直接修改。

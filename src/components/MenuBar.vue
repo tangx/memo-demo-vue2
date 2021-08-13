@@ -22,7 +22,8 @@ import { Component, Vue } from "vue-property-decorator";
 @Component
 export default class MenuBar extends Vue {
   openEditor(): void {
-    this.$store.state.isMemoEditorVisibility = true;
+    // this.$store.state.isMemoEditorVisibility = true;
+    this.$store.commit("setMemoEditorVisibility", true);
   }
 
   initialTestData(): void {
@@ -56,7 +57,8 @@ export default class MenuBar extends Vue {
           ele.title,
           ele.content
         );
-        this.$store.state.aHelper.add(memo);
+        // this.$store.state.aHelper.add(memo);
+        this.$store.commit("aHelperAdd", memo);
       }, 10);
     }
   }

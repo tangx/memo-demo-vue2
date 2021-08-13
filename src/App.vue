@@ -3,6 +3,8 @@
     <h1>{{ $store.state.title }}</h1>
 
     <div>
+      <!-- 直接获取状态 -->
+      <!-- getters 更多的返回二次处理的状态 -->
       <MemoEditor v-if="$store.state.isMemoEditorVisibility" />
       <MemuBar />
       <ItemList />

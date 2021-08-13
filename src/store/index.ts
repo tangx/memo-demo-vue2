@@ -22,25 +22,43 @@ const store = new Vuex.Store({
         // 传递 memo 对象
         transMemo: null,
     },
+    // 返回公共调用数据， 避免每个地方都修改
     getters: {
         totalCount: state => {
             return state.aHelper.memoList.length
         },
-        MemoArr: state => {
-            return state.aHelper.memoList
-        },
+
         reverseMemoArr: state => {
+            // 指针对象， 所以反转 违反了 strict
+            // https://qastack.cn/programming/30610523/reverse-array-in-javascript-without-mutating-original-array
+            // 使用 slice() 创建一个切片拷贝
+            // return state.aHelper.memoList.slice().reverse()
             return state.aHelper.memoList.reverse()
+
+        },
+
+        memoEditorVisibility: state => {
+            return state.isMemoEditorVisibility
         }
+
     },
+    // 应该是修改 state 中数据的唯一方式
     mutations: {
         openMemoEditor(state: any, memo: any) {
             state.transMemo = memo
-            state.isMemoEditorVisibility = true;
-
+            this.setMemoEditorVisibility(state, true)
         },
         resetTransMemo(state: any) {
             state.transMemo = null
+        },
+        setMemoEditorVisibility(state: any, status: boolean) {
+            state.isMemoEditorVisibility = status
+        },
+        aHelperAdd(state: any, memo: any) {
+            state.aHelper.add(memo)
+        },
+        aHelperRemove(state: any, id: number) {
+            state.aHelper.remove(id)
         }
     },
 

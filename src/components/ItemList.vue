@@ -1,6 +1,7 @@
 <template>
   <div id="memos" class="container">
     <div>
+      <!-- <MemoItem v-for="item in reverseMemoArr" :key="item.id" :memo="item" /> -->
       <MemoItem v-for="item in reverseMemoArr" :key="item.id" :memo="item" />
     </div>
   </div>
@@ -20,7 +21,8 @@ import { Component, Vue } from "vue-property-decorator";
 
   computed: {
     reverseMemoArr() {
-      return this.$store.state.aHelper.memoList.reverse();
+      //   return this.$store.state.aHelper.memoList.reverse();
+      return this.$store.getters.reverseMemoArr;
     },
   },
 })

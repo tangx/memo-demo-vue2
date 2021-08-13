@@ -56,7 +56,11 @@ export default class MemoEditor extends Vue {
   }
   closeEditor() {
     this.$store.state.isMemoEditorVisibility = false;
-    this.$store.state.transMemo = null;
+
+    // https://vuex.vuejs.org/zh/guide/forms.html
+    // 使用 mutation 事件修改数据， 而非直接修改。
+    // this.$store.state.transMemo = null;
+    this.$store.commit("resetTransMemo");
   }
 
   created(): void {

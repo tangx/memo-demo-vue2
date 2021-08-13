@@ -8,6 +8,10 @@ Vue.use(Vuex)
 
 // 3. 创建 vuex 的仓库对象
 const store = new Vuex.Store({
+    // 严格模式
+    // https://vuex.vuejs.org/zh/guide/strict.html
+    strict: true,
+
     state: {
         title: '用户界面最友好的备忘录工具',
         aHelper: new ActionHelper(),
@@ -21,14 +25,22 @@ const store = new Vuex.Store({
     getters: {
         totalCount: state => {
             return state.aHelper.memoList.length
+        },
+        MemoArr: state => {
+            return state.aHelper.memoList
+        },
+        reverseMemoArr: state => {
+            return state.aHelper.memoList.reverse()
         }
     },
     mutations: {
         openMemoEditor(state: any, memo: any) {
-
             state.transMemo = memo
             state.isMemoEditorVisibility = true;
 
+        },
+        resetTransMemo(state: any) {
+            state.transMemo = null
         }
     },
 

@@ -16,7 +16,7 @@
       />
     </div>
     <div>
-      <input
+      <textarea
         id="edit-content"
         type="text"
         placeholder="内容"

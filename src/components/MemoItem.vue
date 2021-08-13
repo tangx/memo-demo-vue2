@@ -4,9 +4,9 @@
     <div class="time">
       <span class="timestamp">{{ memo.createTime }}</span>
       <!-- <span class="category">{{ memo.cataId }} </span> -->
-      <span class="category">
+      <span class="catagory">
         分类:
-        {{ $store.state.aHelper.categoryTranslate(memo.cataId) }}
+        {{ $store.state.aHelper.catagoryTranslate(memo.cataId) }}
       </span>
 
       <button @click="editMemo">编辑</button>

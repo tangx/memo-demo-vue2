@@ -63,7 +63,7 @@ class ActionHelper {
     }
 
     // category translate
-    categoryTranslate(id: number): string {
+    catagoryTranslate(id: number): string {
         return ['工作', '生活', '学习'][id]
     }
 

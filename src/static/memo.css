@@ -1,0 +1,33 @@
+.memo {
+    margin: 2%;
+    border: 1px solid black;
+}
+
+.title {
+    font-size: 30px;
+}
+
+.content {
+    margin: 3%;
+    /* border: 1px solid black; */
+}
+
+.catagory{
+    margin: 10px;
+    /* background-color: grey; */
+}
+.timestamp{
+    margin: 10px;
+}
+
+#edit-content{
+    width: 500px;
+    height: 300px;
+    margin: 10px;
+}
+#edit-title{
+    width: 390px;
+}
+#edit-catagory{
+    width:100px;
+}

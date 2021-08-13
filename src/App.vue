@@ -37,3 +37,5 @@ export default class App extends Vue {}
 }
 </style>
 
+// include css
+<style src='./static/memo.css'></style>

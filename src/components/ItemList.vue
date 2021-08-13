@@ -36,17 +36,3 @@ export default class ItemList extends Vue {
   //   }
 }
 </script>
-
-<style>
-.memo {
-  margin: 2%;
-  border: 1px solid black;
-}
-.title {
-  font-size: 30px;
-}
-.content {
-  margin: 3%;
-  /* border: 1px solid black; */
-}
-</style>

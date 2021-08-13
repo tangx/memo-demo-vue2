@@ -61,6 +61,12 @@ class ActionHelper {
             this.add(item)
         }
     }
+
+    // category translate
+    categoryTranslate(id: number): string {
+        return ['工作', '生活', '学习'][id]
+    }
+
 }
 
 export default ActionHelper;

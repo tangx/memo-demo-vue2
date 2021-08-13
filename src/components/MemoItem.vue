@@ -2,7 +2,13 @@
   <div class="memo" :key="memo.id" :memo-id="memo.id">
     <div class="title">{{ memo.title }}</div>
     <div class="time">
-      {{ memo.createTime }}
+      <span class="timestamp">{{ memo.createTime }}</span>
+      <!-- <span class="category">{{ memo.cataId }} </span> -->
+      <span class="category">
+        分类:
+        {{ $store.state.aHelper.categoryTranslate(memo.cataId) }}
+      </span>
+
       <button @click="editMemo">编辑</button>
       <button @click="delMemo">删除</button>
     </div>

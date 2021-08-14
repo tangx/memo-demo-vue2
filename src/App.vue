@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <h1>{{ $store.state.title }}</h1>
+  <div id="app" class="container">
+    <!-- <h1></h1> -->
 
     <div>
       <!-- 直接获取状态 -->
@@ -38,6 +38,3 @@ export default class App extends Vue {}
   margin-top: 60px;
 }
 </style>
-
-// include css
-<style src='./static/memo.css'></style>

@@ -1,15 +1,35 @@
 <template>
   <div>
-    <nav>
-      <span align="left">菜单栏</span>
-      <button @click="openEditor">新建</button>
-      <span>全部</span>
-      <span>
-        <!-- {{ totalCount }} -->
-        {{ $store.getters.totalCount }}
-      </span>
-      <div>
-        <button @click="initialTestData">创建测试数据</button>
+    <nav class="m-2 text-left navbar navbar-expand-lg navbar-light bg-light">
+      <div class="navbar-brand">
+        {{ $store.state.title }}
+        <span class="badge badge-secondary">
+          <!-- {{ totalCount }} -->
+          {{ $store.getters.totalCount }}
+        </span>
+      </div>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <div class="nav-link" @click="openEditor">新建</div>
+          </li>
+          <li class="nav-item">
+            <div class="nav-link" @click="initialTestData">测试数据</div>
+          </li>
+        </ul>
       </div>
     </nav>
   </div>

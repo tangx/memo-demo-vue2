@@ -1,20 +1,21 @@
 <template>
-  <div class="memo" :key="memo.id" :memo-id="memo.id">
-    <div class="title">{{ memo.title }}</div>
-    <div class="time">
-      <span class="timestamp">{{ memo.createTime }}</span>
-      <!-- <span class="category">{{ memo.cataId }} </span> -->
-      <span class="catagory">
-        分类:
-        {{ $store.state.aHelper.catagoryTranslate(memo.cataId) }}
-      </span>
-
-      <button @click="editMemo">编辑</button>
-      <button @click="delMemo">删除</button>
-    </div>
-
-    <div class="content">
-      {{ memo.content }}
+  <div style="margin: 1%" class="mt-0" :key="memo.id" :memo-id="memo.id">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ memo.title }}</h5>
+        <h5 class="card-title small">
+          {{ memo.createTime }}
+          <br />
+          分类: {{ $store.state.aHelper.catagoryTranslate(memo.cataId) }}
+        </h5>
+        <p class="card-text">
+          {{ memo.content }}
+        </p>
+        <div>
+          <div @click="editMemo" class="m-1 btn btn-outline-primary">编辑</div>
+          <div @click="delMemo" class="m-1 btn btn-outline-danger">删除</div>
+        </div>
+      </div>
     </div>
   </div>
 </template>

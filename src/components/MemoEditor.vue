@@ -1,33 +1,51 @@
 <template>
   <div>
-    <div>
-      <!-- 使用 v-model 绑定数据 -->
-      <input
-        id="edit-title"
-        type="text"
-        placeholder="标题"
-        v-model="memo.title"
-      />
-      <input
-        id="edit-catagory"
-        type="text"
-        placeholder="0 1 2"
-        v-model="memo.cataId"
-      />
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <!-- input GROUP 1 -->
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">标题</span>
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="请输入标题"
+            v-model="memo.title"
+          />
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">分类</span>
+            <select
+              class="custom-select"
+              id="inputGroupSelect01"
+              v-model="memo.cataId"
+            >
+              <option selected>Choose...</option>
+              <option value="0">工作</option>
+              <option value="1">学习</option>
+              <option value="2">生活</option>
+            </select>
+          </div>
+        </div>
+        <!-- content -->
+        <div class="form-group">
+          <!-- <label for="exampleFormControlTextarea1">Example textarea</label> -->
+          <textarea
+            class="form-control"
+            id="exampleFormControlTextarea1"
+            rows="3"
+            placeholder="请输入正文内容"
+            v-model="memo.content"
+          ></textarea>
+        </div>
+      </div>
+      <div>
+        <button class="m-3 btn btn-primary" @click="saveMemo">保存</button>
+        <button class="m-3 btn btn-outline-danger" @click="closeEditor">
+          取消
+        </button>
+      </div>
     </div>
-    <div>
-      <textarea
-        id="edit-content"
-        type="text"
-        placeholder="内容"
-        v-model="memo.content"
-      />
-    </div>
-    <div>
-      <button @click="saveMemo">保存</button>
-      <button @click="closeEditor">取消</button>
-    </div>
-    <p></p>
   </div>
 </template>
 

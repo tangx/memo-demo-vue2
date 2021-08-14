@@ -46,7 +46,8 @@ const store = new Vuex.Store({
     mutations: {
         openMemoEditor(state: any, memo: any) {
             state.transMemo = memo
-            this.setMemoEditorVisibility(state, true)
+            store.commit('setMemoEditorVisibility', true)
+
         },
         resetTransMemo(state: any) {
             state.transMemo = null

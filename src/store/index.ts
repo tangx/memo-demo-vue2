@@ -13,7 +13,7 @@ const store = new Vuex.Store({
     strict: true,
 
     state: {
-        title: '用户界面最友好的备忘录工具',
+        title: '界面最友好的备忘录',
         aHelper: new ActionHelper(),
 
         // 是否显示编辑框
